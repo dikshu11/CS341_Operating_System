@@ -1,0 +1,22 @@
+1. Use the cat command on lab.txt . Pipe the result to a sed command and parenthesize first character of each word. Store the results in a file called  lab1.txt 
+
+Ans: cat lab.txt | sed -E 's/\<./(&)/g' > lab1.txt
+
+2. Use the cat command on lab.txt . Pipe the result to a sed command and replace 2 nd occurrence to all occurrences of highlighted words (in red color) of each line . Store the results in a file called lab2.txt. 
+
+
+
+Ans: cat lab.txt | sed 's/do/temp/2g' | sed 's/footballer/temp/2g' | sed 's/fight/temp/2g' | sed 's/blood/temp/2g'  > lab2.txt
+
+
+/*
+Here all second occurances are replaced to temp
+Command sed 's/pattern/replace_pattern/2g' pattern is replaced to replace_pattern
+*/
+
+
+3. Use the ​ cat command ​ on lab.txt ​ . Pipe the result to a ​ sed ​ command and perform both the modification using inline sed command. Store the results in a file called  ​ lab3.txt
+
+Ans:
+
+ cat lab.txt | sed 's/do/temp/2g' | sed 's/footballer/temp/2g' | sed 's/fight/temp/2g' | sed 's/blood/temp/2g' | sed -E 's/\<./(&)/g' > lab3.txt 
